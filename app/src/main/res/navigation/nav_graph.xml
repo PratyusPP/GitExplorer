@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.gitexplorer.fragment.SearchFragment"
+        android:label="Search">
+        <action
+            android:id="@+id/action_search_to_details"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.gitexplorer.fragment.DetailsFragment"
+        android:label="Details">
+        <argument android:name="repo_json" app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.gitexplorer.fragment.FavouritesFragment"
+        android:label="Favorites">
+
+        <action
+            android:id="@+id/action_favorites_to_details"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+</navigation>
